@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+  "
+>
+  <bean id="siyoung" class="com.fw.week2.Person">
+    <property name="name" value="우시영"/>
+    <property name="age" value="30"/>
+    <property name="gender" value="M"/>
+    <property name="birthDate" value="1996-12-09"/>
+  </bean>
+</beans>
