@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean id="yiseoul" class="com.fw.week2.Person">
-    <property name="name" value="yiseoul"></property>
+    <property name="name" value="yiseul"></property>
     <property name="age" value="30"></property>
     <property name="gender" value="F"></property>
     <property name="birthDate" value="1996-12-03"></property>
