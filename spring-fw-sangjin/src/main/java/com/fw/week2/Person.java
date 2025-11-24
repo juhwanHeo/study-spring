@@ -1,10 +1,13 @@
 package com.fw.week2;
 
+import com.fw.week3.Food;
+
 public class Person {
     private String name;      // 이름
     private int age;          // 나이
     private String gender;    // 성별 (F / M)
     private String birthDate; // 생일 (YYYY-MM-DD)
+    private Food favoriteFood; // 좋아하는 음식
 
     public Person() {}
 
@@ -28,11 +31,16 @@ public class Person {
     public String getBirthDate() { return birthDate; }
     public void setBirthDate(String birthDate) { this.birthDate = birthDate; }
 
+    public Food getFavoriteFood() { return favoriteFood; }
+    public void setFavoriteFood(Food favoriteFood) { this.favoriteFood = favoriteFood; }
+
     // 소개 메서드
     public void hello() {
+        String foodInfo = favoriteFood != null ? 
+            ", 좋아하는 음식은 " + favoriteFood.getName() + "(" + favoriteFood.getType() + ")" : "";
         System.out.println(
                 "안녕하세요, 저는 " + name + "입니다. 나이 " + age +
-                        ", 성별 " + gender + ", 생일 " + birthDate + " 입니다."
+                        ", 성별 " + gender + ", 생일 " + birthDate + foodInfo + " 입니다."
         );
     }
 
@@ -43,6 +51,7 @@ public class Person {
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
                 ", birthDate='" + birthDate + '\'' +
+                ", favoriteFood=" + favoriteFood +
                 '}';
     }
 }
