@@ -8,11 +8,17 @@
     <property name="type" value="KOR" />
   </bean>
 
+  <bean id="vegetable" class="com.fw.week3.Vegetable" lazy-init="true">
+    <property name="name" value="감자" />
+    <property name="type" value="ROOT" />
+  </bean>
+
   <bean id="juhwan" class="com.fw.week2.Person" depends-on="food">
     <property name="name" value="Heo juhwan" />
     <property name="age" value="27" />
     <property name="gender" value="M" />
     <property name="birthDate" value="1999-06-30" />
     <property name="food" ref="food" />
+    <property name="vegetable" ref="vegetable" />
   </bean>
 </beans>
