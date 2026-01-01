@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="food" class="com.fw.week3.Food">
+    <property name="name" value="김치찌개"/>
+    <property name="type" value="KOR" />
+  </bean>
+
+  <bean id="juhwan" class="com.fw.week2.Person" depends-on="food">
+    <property name="name" value="Heo juhwan" />
+    <property name="age" value="27" />
+    <property name="gender" value="M" />
+    <property name="birthDate" value="1999-06-30" />
+    <property name="food" ref="food" />
+  </bean>
+</beans>
