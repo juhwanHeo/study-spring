@@ -1,10 +1,14 @@
 package com.fw.week2;
 
+import com.fw.week3.Food;
+
 public class Person {
   private String name; // JoSuhyeon
   private int age; // 25
   private String gender; // F/M
   private String birthDate; // YYYY-MM-DD
+
+  private Food food;
 
   public void hello() {
     System.out.printf(
@@ -20,6 +24,7 @@ public class Person {
     this.gender = gender;
   }
   public void setBirthDate(String birthDate) { this.birthDate = birthDate; }
+  public void setFood(Food food) { this.food = food; }
 
   // Getter
   public String getName() { return this.name; }
