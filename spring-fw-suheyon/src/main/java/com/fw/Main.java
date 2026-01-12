@@ -12,10 +12,11 @@ public class Main {
   public static void main(String[] args) {
     ApplicationContext context =  new ClassPathXmlApplicationContext("week3.xml");
     Person suhyeon = (Person) context.getBean("suhyeon");
+    Food food = context.getBean("financier", Food.class);
 
     // suhyeon.hello();
 
-    Food food = context.getBean("financier", Food.class);
     log.info("\nFood bean: name={}, type={}", food.getName(), food.getType());
+    log.info("\nPerson bean:name={}, birthDate={}, age={}, gender={}, food={}", suhyeon.getName(), suhyeon.getBirthDate(), suhyeon.getAge(), suhyeon.getGender(), suhyeon.getFood());
   }
 }

@@ -35,4 +35,5 @@ public class Person {
     return this.gender;
   }
   public String getBirthDate() { return this.birthDate;}
+  public String getFood() { return this.food.getName();}
 }
