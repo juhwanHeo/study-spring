@@ -1,7 +1,9 @@
 package com.fw.week2;
 
 import com.fw.week3.Food;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class Person {
   private String name; // JoSuhyeon
   private int age; // 25
@@ -36,4 +38,9 @@ public class Person {
   }
   public String getBirthDate() { return this.birthDate;}
   public String getFood() { return this.food.getName();}
+
+  // Conrstructor
+  public Person() {
+    log.info("\ncreate: Person bean");
+  }
 }
