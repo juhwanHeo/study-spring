@@ -16,4 +16,9 @@
     <property name="type" value="dessert"/>
   </bean>
 
+  <bean id="tomato" class="com.fw.week3.Vegetable" lazy-init="true">
+    <property name="name" value="tomato"/>
+    <property name="type" value="fruit vegetable"/>
+  </bean>
+
 </beans>
