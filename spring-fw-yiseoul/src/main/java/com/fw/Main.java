@@ -10,8 +10,8 @@ public class Main {
 
   public static void main(String[] args) {
     log.info("Hello World!!"); // 1주차
-    ApplicationContext context = new ClassPathXmlApplicationContext("week2.xml");
-    Person person = (Person) context.getBean("yiseoul");
+    ApplicationContext context = new ClassPathXmlApplicationContext("week3.xml");
+    Person person = (Person) context.getBean("yiseul");
     person.hello();
   }
 }
