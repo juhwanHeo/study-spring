@@ -3,15 +3,19 @@ package com.fw.week3;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Getter
-@NoArgsConstructor
 public class Food {
   @Setter
   private String name;
   private String type;
+
+  Food() {
+    log.info("Food 생성!");
+  }
 
   public void setType(String type) {
     try {
