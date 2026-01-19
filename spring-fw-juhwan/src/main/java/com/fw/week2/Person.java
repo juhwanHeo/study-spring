@@ -1,14 +1,14 @@
 package com.fw.week2;
 
+import com.fw.week3.Food;
+import com.fw.week3.Vegetable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class Person {
 
   /*
@@ -21,6 +21,12 @@ public class Person {
   private int age;
   private GenderType gender;
   private String birthDate;
+  private Food food;
+  private Vegetable vegetable;
+
+  public Person() {
+    log.info("Person 생성!");
+  }
 
   public enum GenderType {
     M, // male
@@ -32,5 +38,7 @@ public class Person {
     log.info("age: {}", age);
     log.info("gender: {}", gender);
     log.info("birth date: {}", birthDate);
+    log.info("food: {}", food);
+    log.info("vegetable: {}", vegetable);
   }
 }

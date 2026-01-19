@@ -9,9 +9,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("week2.xml");
-    Person helloBean = context.getBean("juhwan", Person.class);
+    ApplicationContext context = new ClassPathXmlApplicationContext("week3.xml");
+    Person person = context.getBean("juhwan", Person.class);
 
-    helloBean.hello();
+    person.hello();
   }
 }
