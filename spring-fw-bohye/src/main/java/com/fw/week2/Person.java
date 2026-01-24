@@ -1,6 +1,7 @@
 package com.fw.week2;
 
 import com.fw.week3.Food;
+import com.fw.week3.Vegetable;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,6 +14,7 @@ public class Person {
     private String birthDate;
 
     private Food food;
+    private Vegetable vegetable;
 
     public Person() {
         log.info("Person created (constructor called).");
@@ -24,5 +26,6 @@ public class Person {
         log.info("gender: {}", gender);
         log.info("birth date: {}", birthDate);
         log.info("food: {}", food);
+        log.info("vegetable: {}",vegetable);
     }
 }
