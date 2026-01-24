@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="vegetable" class="com.fw.week3.Vegetable" lazy-init="true">
+    <property name="name" value="감자"></property>
+    <property name="type" value="RT"></property>
+  </bean>
+
+  <bean id="food" class="com.fw.week3.Food">
+    <property name="name" value="감자전"></property>
+    <property name="type" value="KR"></property>
+  </bean>
+
+  <bean id="yiseul" class="com.fw.week2.Person">
+    <property name="name" value="yiseul"></property>
+    <property name="age" value="30"></property>
+    <property name="gender" value="F"></property>
+    <property name="birthDate" value="1996-12-03"></property>
+    <property name="food" ref="food"></property>
+  </bean>
+
+</beans>
