@@ -5,6 +5,17 @@ plugins {
 group = 'com.fw'
 version = '1.0-SNAPSHOT'
 
+// 한글 인코딩 설정
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(JavaExec) {
+    systemProperty 'file.encoding', 'UTF-8'
+    systemProperty 'stdout.encoding', 'UTF-8'
+    systemProperty 'stderr.encoding', 'UTF-8'
+}
+
 repositories {
     mavenCentral()
 }
