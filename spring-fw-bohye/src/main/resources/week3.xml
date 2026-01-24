@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="food" class="com.fw.week3.Food">
+        <property name="name" value="sushi"/>
+        <property name="type" value="japaneseFood"/>
+    </bean>
+
+    <bean id="bohye" class="com.fw.week2.Person" depends-on="food">
+        <property name="name" value="bohye"/>
+        <property name="age" value="32"/>
+        <property name="gender" value="F"/>
+        <property name="birthDate" value="1995-11-06"/>
+        <property name="food" ref="food"/>
+    </bean>
+</beans>
