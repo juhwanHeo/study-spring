@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         log.info("Hello World");
-        ApplicationContext context = new ClassPathXmlApplicationContext("week2.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("week3.xml");
         Person person = context.getBean("bohye", Person.class);
         person.hello();
     }
