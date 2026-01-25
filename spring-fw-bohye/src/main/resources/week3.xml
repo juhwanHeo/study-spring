@@ -21,6 +21,5 @@
         <property name="gender" value="F"/>
         <property name="birthDate" value="1995-11-06"/>
         <property name="food" ref="food"/>
-        <property name="vegetable" ref="vegetable"/>
     </bean>
 </beans>
