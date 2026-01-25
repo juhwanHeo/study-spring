@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="food" class="com.fw.week3.Food">
+        <property name="name" value="김치찌개"/>
+        <property name="type" value="KOREAN"/>
+    </bean>
+
+    <bean id="juwonlee" class="com.fw.week2.Person">
+        <property name="name" value="Juwon Lee"/>
+        <property name="age" value="27"/>
+        <property name="gender" value="M"/>
+        <property name="birthDate" value="1999-04-24"/>
+        <property name="food" ref="food"/>
+    </bean>
+
+    <bean id="vegetable" class="com.fw.week3.Vegetable" lazy-init="true">
+        <property name="name" value="고구마"/>
+        <property name="type" value="ROOT"/>
+    </bean>
+</beans>
