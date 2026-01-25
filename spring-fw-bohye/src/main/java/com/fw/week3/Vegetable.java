@@ -9,7 +9,8 @@ public class Vegetable {
     private String name;
     private String type;
 
-    public Vegetable() {
-        log.info("Vegetable created (constructor called).");
+    public void yummy() {
+        log.info("name: {}", name);
+        log.info("type: {}", type);
     }
 }
