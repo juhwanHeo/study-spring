@@ -11,15 +11,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
   public static void main(String[] args) {
-    try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("week2.xml", "week3.xml")) {
-      Person person = context.getBean(Person.class);
-      person.hello();
+    ApplicationContext  context = new ClassPathXmlApplicationContext("week3.xml");
+    Person person = context.getBean(Person.class);
+    person.hello();
 
-      Food food = context.getBean(Food.class);
-      food.introduce();
-
-      Vegetable vegetable = context.getBean(Vegetable.class);
-      vegetable.introduce();
-    }
+    Vegetable vegetable = context.getBean(Vegetable.class);
+    vegetable.introduce();
   }
 }

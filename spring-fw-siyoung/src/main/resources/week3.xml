@@ -3,6 +3,19 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+  <bean id="food" class="com.fw.week3.Food">
+    <property name="name" value="피자"/>
+    <property name="type" value="양식"/>
+  </bean>
+
+  <bean id="person" class="com.fw.week2.Person" depends-on="food">
+    <property name="name" value="우시영"/>
+    <property name="age" value="30"/>
+    <property name="gender" value="M"/>
+    <property name="birthDate" value="1996-12-09"/>
+    <property name="food" ref="food"/>
+  </bean>
+
   <bean id="vegetable" class="com.fw.week3.Vegetable" lazy-init="true">
     <property name="name" value="감자"/>
     <property name="type" value="뿌리채소"/>

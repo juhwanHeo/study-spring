@@ -7,12 +7,7 @@
     https://www.springframework.org/schema/beans/spring-beans.xsd
   "
 >
-  <bean id="food" class="com.fw.week3.Food">
-    <property name="name" value="피자"/>
-    <property name="type" value="양식"/>
-  </bean>
-
-  <bean id="siyoung" class="com.fw.week2.Person" depends-on="food">
+  <bean id="siyoung" class="com.fw.week2.Person">
     <property name="name" value="우시영"/>
     <property name="age" value="30"/>
     <property name="gender" value="M"/>

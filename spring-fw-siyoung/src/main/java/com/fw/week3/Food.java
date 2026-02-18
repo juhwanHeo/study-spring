@@ -19,8 +19,4 @@ public class Food {
   public String getType() {
     return type;
   }
-
-  public void introduce() {
-    System.out.printf("음식: %s / 종류 : %s %n", name, type);
-  }
 }
