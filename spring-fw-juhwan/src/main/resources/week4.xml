@@ -11,6 +11,11 @@
 
   <context:annotation-config/>
 
+  <bean id="parentPerson" class="com.fw.week2.Person" abstract="true">
+    <property name="name" value="홍길동" />
+    <property name="age" value="0" />
+  </bean>
+
   <bean id="food" class="com.fw.week3.Food">
     <property name="name" value="김치찌개"/>
     <property name="type" value="KOR" />
@@ -21,8 +26,13 @@
     <property name="type" value="ROOT" />
   </bean>
 
-  <bean id="juhwan" class="com.fw.week2.Person" depends-on="food">
-    <property name="name" value="Heo juhwan" />
+  <bean
+    id="juhwan"
+    class="com.fw.week2.Person"
+    depends-on="food"
+    parent="parentPerson"
+  >
+<!--    <property name="name" value="Heo juhwan" />-->
     <property name="age" value="27" />
     <property name="gender" value="M" />
     <property name="birthDate" value="1999-06-30" />
