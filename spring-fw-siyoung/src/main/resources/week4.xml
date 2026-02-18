@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:annotation-config/>
+
+  <bean id="beanPostProcessor" class="com.fw.week4.BeanPostProcessorImpl" />
+
+  <bean id="food" class="com.fw.week3.Food">
+    <property name="name" value="피자"/>
+    <property name="type" value="양식"/>
+  </bean>
+
+  <bean id="tmplt" class="com.fw.week2.Person" depends-on="food" abstract="true">
+    <property name="name" value="홍길동"/>
+    <property name="age" value="0"/>
+<!--    <property name="gender" value="M"/>-->
+<!--    <property name="birthDate" value="1996-12-09"/>-->
+    <property name="food" ref="food"/>
+  </bean>
+
+  <bean id="person" parent="tmplt">
+    <property name="age" value="31"/>
+  </bean>
+
+  <bean id="vegetable" class="com.fw.week3.Vegetable" lazy-init="true">
+    <property name="name" value="감자"/>
+    <property name="type" value="뿌리채소"/>
+  </bean>
+
+</beans>
