@@ -16,12 +16,13 @@
     <property name="type" value="KR"></property>
   </bean>
 
-  <bean id="yiseul" class="com.fw.week2.Person">
-    <property name="name" value="yiseul"></property>
+  <bean id="personTemplate" class="com.fw.week2.Person" abstract="true">
+    <property name="name" value="홍길동"></property>
+    <property name="age" value="0"></property>
+  </bean>
+
+  <bean id="yiseul" parent="personTemplate">
     <property name="age" value="30"></property>
-    <property name="gender" value="F"></property>
-    <property name="birthDate" value="1996-12-03"></property>
-    <property name="food" ref="food"></property>
   </bean>
 
 </beans>
