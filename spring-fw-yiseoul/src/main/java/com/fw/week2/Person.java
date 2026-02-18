@@ -2,6 +2,8 @@ package com.fw.week2;
 
 import com.fw.week3.Food;
 import com.fw.week3.Vegetable;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +20,16 @@ public class Person {
 
   Person() {
     log.info("Person 생성!");
+  }
+
+  @PostConstruct
+  public void initialize() {
+    log.info("Person 탄생!");
+  }
+
+  @PreDestroy
+  public void destroy() {
+    log.info("Person 파괴!");
   }
 
   public void hello() {
