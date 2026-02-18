@@ -21,6 +21,6 @@ public class Vegetable {
   }
 
   public void introduce() {
-    System.out.printf("음식: %s / 종류 : %s %n", name, type);
+    System.out.printf("음식 : %s / 종류 : %s %n", name, type);
   }
 }
