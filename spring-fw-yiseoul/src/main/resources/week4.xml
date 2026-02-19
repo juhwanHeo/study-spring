@@ -6,6 +6,8 @@
 
   <context:annotation-config/>
 
+  <bean class="com.fw.week4.CustomBeanPostProcessor"></bean>
+
   <bean id="vegetable" class="com.fw.week3.Vegetable" lazy-init="true">
     <property name="name" value="감자"></property>
     <property name="type" value="RT"></property>
