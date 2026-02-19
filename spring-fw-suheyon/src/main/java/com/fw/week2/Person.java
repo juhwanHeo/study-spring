@@ -46,6 +46,11 @@ public class Person {
     log.info("\ncreate: Person bean");
   }
 
+  // Print person info
+  public void printInfo() {
+    log.info("name : {} / age : {}", name, age);
+  }
+
   // @PostConstruct
   @PostConstruct
   public void init() {

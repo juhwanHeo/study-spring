@@ -13,6 +13,8 @@ public class Main {
   public static void main(String[] args) {
 
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("week4.xml");
+    Person person = context.getBean("suhyeon", Person.class);
+    person.printInfo();
 
     context.close();
   }
