@@ -9,6 +9,8 @@
 
   <context:annotation-config/>
 
+  <bean id="beanPostProcessorImpl" class="com.fw.week4.BeanPostProcessorImpl"/>
+
   <bean id="personTemplate" class="com.fw.week2.Person" abstract="true">
     <property name="name" value="HongGildong"/>
     <property name="age" value="0"/>
