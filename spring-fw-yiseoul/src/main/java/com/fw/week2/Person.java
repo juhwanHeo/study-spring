@@ -2,9 +2,9 @@ package com.fw.week2;
 
 import com.fw.week3.Food;
 import com.fw.week3.Vegetable;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import java.util.Optional;
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
