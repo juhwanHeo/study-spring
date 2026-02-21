@@ -16,6 +16,6 @@ public class Main {
     person.hello();
     vegetable.print();
 
-    context.registerShutdownHook();
+    context.close();
   }
 }
