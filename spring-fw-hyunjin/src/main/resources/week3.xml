@@ -17,7 +17,7 @@
     </bean>
 
     <!-- Person Bean 정의  -->
-    <bean id="hyunjin" class="com.fw.week2.Person">
+    <bean id="hyunjin" class="com.fw.week2.Person" depends-on="food">
         <property name="name" value="hyunjin" />
         <property name="age" value="24" />
         <property name="gender" value="F" />
