@@ -10,6 +10,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
   <context:annotation-config/>
+  <context:property-placeholder location="classpath:gamja.properties"/>
 
   <bean class="com.fw.week4.BeanPostProcessorImpl" />
 
