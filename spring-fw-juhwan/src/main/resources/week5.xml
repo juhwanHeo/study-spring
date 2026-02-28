@@ -16,4 +16,5 @@
 
   <bean id="myServiceImpl" class="com.fw.week5.MyServiceImpl" />
   <bean id="gamjaServiceImpl" class="com.fw.week5.GamjaServiceImpl" />
+  <bean id="helloService" class="com.fw.week5.HelloService" />
 </beans>

@@ -1,7 +1,6 @@
 package com.fw;
 
-import com.fw.week5.GamjaServiceImpl;
-import com.fw.week5.MyServiceImpl;
+import com.fw.week5.HelloService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -11,12 +10,9 @@ public class Main {
 
   public static void main(String[] args) {
     ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("week5.xml");
+    HelloService helloService = context.getBean(HelloService.class);
 
-    MyServiceImpl myService = context.getBean("myServiceImpl", MyServiceImpl.class);
-    GamjaServiceImpl gamjaService = context.getBean("gamjaServiceImpl", GamjaServiceImpl.class);
-
-    myService.hello();
-    gamjaService.hello();
+    helloService.sayHello();
     context.close();
   }
 }
