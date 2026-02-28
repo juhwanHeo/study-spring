@@ -14,4 +14,5 @@
   <bean class="com.fw.week4.BeanPostProcessorImpl" />
 
   <bean id="myServiceImpl" class="com.fw.week5.MyServiceImpl" />
+  <bean id="gamjaServiceImpl" class="com.fw.week5.GamjaServiceImpl" />
 </beans>
