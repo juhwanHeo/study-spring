@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:annotation-config/>
+
+  <bean class="com.fw.week4.CustomBeanPostProcessor"></bean>
+
+  <bean id="vegetable" class="com.fw.week3.Vegetable" lazy-init="true">
+    <property name="name" value="감자"></property>
+    <property name="type" value="RT"></property>
+  </bean>
+
+  <bean id="food" class="com.fw.week3.Food">
+    <property name="name" value="감자전"></property>
+    <property name="type" value="KR"></property>
+  </bean>
+
+  <bean id="personTemplate" class="com.fw.week2.Person" abstract="true">
+    <property name="name" value="홍길동"></property>
+    <property name="age" value="0"></property>
+  </bean>
+
+  <bean id="yiseul" parent="personTemplate">
+    <property name="age" value="30"></property>
+  </bean>
+
+</beans>

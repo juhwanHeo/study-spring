@@ -2,6 +2,9 @@ package com.fw.week2;
 
 import com.fw.week3.Food;
 import com.fw.week3.Vegetable;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,8 +23,21 @@ public class Person {
     log.info("Person 생성!");
   }
 
+  @PostConstruct
+  public void initialize() {
+    log.info("Person 탄생!");
+  }
+
+  @PreDestroy
+  public void destroy() {
+    log.info("Person 파괴!");
+  }
+
   public void hello() {
     log.info("이름은 {} 나이 {}의 성별 {}인 사람. 생일은 {}입니다.", name,  age, gender, birthDate);
-    log.info("좋아하는 음식은 {} {}입니다.", food.getType(),  food.getName());
+    Optional.ofNullable(food).ifPresentOrElse(
+        f -> log.info("좋아하는 음식은 {} {}입니다.", f.getType(),  f.getName()),
+        () -> log.info("좋아하는 음식이 없습니다.")
+    );
   }
 }
