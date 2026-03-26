@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Food -->
+    <bean id="gamja" class="com.fw.week3.Food">
+        <constructor-arg value="삽겸살"/>
+        <constructor-arg value="한식"/>
+    </bean>
+
+    <!-- Vegetable (Lazy) -->
+    <bean id="vegetable" class="com.fw.week3.Vegetable" lazy-init="true">
+        <constructor-arg value="고구마"/>
+        <constructor-arg value="뿌리채소"/>
+    </bean>
+
+    <!-- Person -->
+    <bean id="inseo" class="com.fw.week2.Person" depends-on="gamja">
+        <property name="name" value="인서"/>
+        <property name="age" value="27"/>
+        <property name="gender" value="M"/>
+        <property name="birthDate" value="1997-10-11"/>
+        <property name="food" ref="gamja"/>
+    </bean>
+
+</beans>
