@@ -21,7 +21,7 @@
         <property name="name" value="인서"/>
         <property name="age" value="27"/>
         <property name="gender" value="M"/>
-        <property name="birthDate" value="1997-10-11"/>
+        <property name="birthDate" value="2000-08-03"/>
         <property name="food" ref="gamja"/>
     </bean>
 
