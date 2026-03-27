@@ -2,17 +2,20 @@ package com.fw.week5;
 
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class HelloService {
 
   @Autowired
-  private MyServiceImpl myService;
+  @Qualifier("myService")
+  private MyService myServiceImpl;
 
   @Resource
-  private GamjaServiceImpl gamjaService;
+  @Qualifier("gamjaService")
+  private MyService gamjaServiceImpl;
 
   public void sayHello() {
-    myService.hello();
-    gamjaService.hello();
+    myServiceImpl.hello();
+    gamjaServiceImpl.hello();
   }
 }
