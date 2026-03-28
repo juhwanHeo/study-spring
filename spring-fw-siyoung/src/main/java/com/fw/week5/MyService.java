@@ -1,6 +1,6 @@
 package com.fw.week5;
 
 public interface MyService {
-  public void hello();
+  void hello();
 
 }
