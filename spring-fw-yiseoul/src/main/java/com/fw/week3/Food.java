@@ -1,6 +1,8 @@
 package com.fw.week3;
 
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +17,16 @@ public class Food {
 
   Food() {
     log.info("Food 생성!");
+  }
+
+  @PostConstruct
+  public void initialize() {
+    log.info("Food 탄생!");
+  }
+
+  @PreDestroy
+  public void destroy() {
+    log.info("Food 파괴!");
   }
 
   public void setType(String type) {

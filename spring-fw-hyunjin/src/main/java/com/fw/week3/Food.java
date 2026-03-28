@@ -1,4 +1,6 @@
 package com.fw.week3;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 // 무얼 해야할까?
 // 1. 필드 선언 : 데이터 저장 공간
@@ -10,17 +12,31 @@ public class Food {
     private String name; // name : 음식 이름
     private String type; // type : 음식 종류 (한식, 중식, 일식, 양식, ... ETC)
 
-    // 2. 기본 생성자
-    public Food() {}
+    // 2. 기본 생성자 (Default Constructor)
+    public Food() {
+        System.out.println("Food 객체 생성!");
+    }
 
     // 3. Setter 메서드 : 외부(XML)에서 들어온 값을 필드에 저장
     public void setName(String name) {
         this.name = name;
     }
-
     public void setType(String type) {
         this.type = type;
     }
+
+    // 초기화 콜백
+    @PostConstruct
+    public void init() {
+        System.out.println("Food @PostConstructor 실행");
+    }
+
+    // 소멸 콜백
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Food @PreDestroy 실행");
+    }
+
 
     @Override
     public String toString() {

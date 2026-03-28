@@ -1,4 +1,6 @@
 package com.fw.week3;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -20,5 +22,17 @@ public class Food {
   // Conrstructor
   public Food() {
     log.info("\ncreate: Food bean");
+  }
+
+  // @PostConstruct
+  @PostConstruct
+  public void init() {
+    log.info("Food @PostConstruct INIT");
+  }
+
+  // @PreDestroy
+  @PreDestroy
+  public void destroy() {
+    log.info("Food @PreDestroy DESTROY");
   }
 }
