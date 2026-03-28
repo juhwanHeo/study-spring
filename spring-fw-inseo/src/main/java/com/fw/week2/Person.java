@@ -1,7 +1,8 @@
 package com.fw.week2;
 
 import com.fw.week3.Food;
-import com.fw.week3.Vegetable;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 public class Person {
 
@@ -10,16 +11,23 @@ public class Person {
     private GenderType gender;
     private String birthDate;
 
-    // ✅ 추가
     private Food food;
-
 
     public Person() {
         System.out.println("Person 생성!");
     }
 
-    // 기존 Getter / Setter 유지
+    @PostConstruct
+    public void init() {
+        System.out.println("Person @PostConstruct 실행");
+    }
 
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Person @PreDestroy 실행");
+    }
+
+    // ✅ getter / setter 둘 다 작성
     public String getName() {
         return name;
     }
@@ -52,12 +60,13 @@ public class Person {
         this.birthDate = birthDate;
     }
 
-    // ✅ Food setter 추가
+    public Food getFood() {
+        return food;
+    }
+
     public void setFood(Food food) {
         this.food = food;
     }
-
-
 
     public enum GenderType {
         M, F
@@ -69,10 +78,8 @@ public class Person {
         System.out.println("gender: " + gender);
         System.out.println("birth date: " + birthDate);
 
-        // ✅ 추가 출력
         if (food != null) {
             food.print();
         }
-
     }
 }
