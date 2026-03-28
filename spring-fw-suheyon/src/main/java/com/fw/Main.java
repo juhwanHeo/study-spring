@@ -11,15 +11,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
   public static void main(String[] args) {
-    ApplicationContext context =  new ClassPathXmlApplicationContext("week3.xml");
-    // Food food = context.getBean("financier", Food.class);
-    // Person suhyeon = (Person) context.getBean("suhyeon");
-    Vegetable vegetable = context.getBean("tomato", Vegetable.class); // lazy-init check
 
-    // suhyeon.hello();
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("week4.xml");
+    Person person = context.getBean("suhyeon", Person.class);
+    person.printInfo();
 
-    // log.info("\nFood bean: name={}, type={}", food.getName(), food.getType());
-    // log.info("\nPerson bean:name={}, birthDate={}, age={}, gender={}, food={}", suhyeon.getName(), suhyeon.getBirthDate(), suhyeon.getAge(), suhyeon.getGender(), suhyeon.getFood());
-    log.info("\nVegetable bean: name={}, type={}", vegetable.getName(), vegetable.getType());
+    context.close();
   }
 }

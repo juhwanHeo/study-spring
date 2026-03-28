@@ -1,6 +1,8 @@
 package com.fw.week2;
 
 import com.fw.week3.Food;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -42,5 +44,22 @@ public class Person {
   // Conrstructor
   public Person() {
     log.info("\ncreate: Person bean");
+  }
+
+  // Print person info
+  public void printInfo() {
+    log.info("name : {} / age : {}", name, age);
+  }
+
+  // @PostConstruct
+  @PostConstruct
+  public void init() {
+    log.info("Person @PostConstruct INIT");
+  }
+
+  // @PreDestroy
+  @PreDestroy
+  public void destroy() {
+    log.info("Person @PreDestroy DESTROY");
   }
 }
