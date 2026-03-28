@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class HelloService {
 
     @Autowired
-    protected MyServiceImpl myService;
+    private MyServiceImpl myService;
 
     @Resource
     private GamjaServiceImpl gamjaService;
