@@ -11,6 +11,7 @@ public class Person {
     private GenderType gender;
     private String birthDate;
     private Food food;
+
     public Person() {
         System.out.println("Person 생성!");
     }

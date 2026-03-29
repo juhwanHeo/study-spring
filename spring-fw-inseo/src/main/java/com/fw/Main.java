@@ -17,7 +17,6 @@ public class Main {
         // 2. 상속 Bean (문제2)
         Person personChild = context.getBean("personChild", Person.class);
         personChild.hello();
-
         context.close();
     }
 }
