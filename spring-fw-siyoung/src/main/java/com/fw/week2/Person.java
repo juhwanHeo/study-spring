@@ -1,5 +1,7 @@
 package com.fw.week2;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import com.fw.week3.Food;
 
 public class Person {
@@ -30,7 +32,17 @@ public class Person {
     this.birthDate = birthDate;
   }
   public void hello() {
-    System.out.printf("%n저는 %d살 %s 성별을 가진 %s이라고 합니다. 생일은 %s일 입니다. %n", age, gender, name, birthDate);
+    System.out.printf("나이 : %s / 이름 : %s %n", age, name);
     System.out.printf("음식 : %s / 종류 : %s %n", food.getName(), food.getType());
+  }
+
+  @PostConstruct
+  public void init() {
+    System.out.println("Person Init");
+  }
+
+  @PreDestroy
+  public void shutdown() {
+    System.out.println("Person Shutdown");
   }
 }
