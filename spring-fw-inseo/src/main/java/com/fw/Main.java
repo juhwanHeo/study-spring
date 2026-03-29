@@ -11,7 +11,6 @@ public class Main {
 
         ConfigurableApplicationContext context =
                 new ClassPathXmlApplicationContext("week4.xml"); // week4로 변경
-
         // 1. Person 먼저 호출 (Lifecycle 확인)
         Person person = context.getBean("person", Person.class);
         person.hello();
