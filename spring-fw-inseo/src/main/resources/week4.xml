@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+    <!-- 기존 Bean -->
+    <bean id="food" class="com.fw.week3.Food">
+        <constructor-arg value="삽겹살"/>
+        <constructor-arg value="한식"/>
+    </bean>
+    <bean id="person" class="com.fw.week2.Person">
+        <property name="name" value="inseo"/>
+        <property name="age" value="27"/>
+        <property name="gender" value="M"/>
+        <property name="birthDate" value="2000-08-03"/>
+        <property name="food" ref="food"/>
+    </bean>
+    <!--2번 문제-->
+    <!--  부모 템플릿 -->
+    <bean id="personTemplate" class="com.fw.week2.Person" abstract="true">
+        <property name="name" value="홍길동"/>
+        <property name="age" value="0"/>
+    </bean>
+    <!--  상속받는 Bean -->
+    <bean id="personChild" parent="personTemplate">
+        <property name="age" value="27"/>
+    </bean>
+    <!-- 3번 문제 -->
+    <bean class="com.fw.week4.MyBeanPostProcessor"/>
+</beans>
