@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- @PostConstruct, @PreDestroy 활성화 -->
+    <context:annotation-config/>
+
+    <!-- ═══ 1. Lifecycle Callbacks ═══ -->
+
+    <!-- Food 빈 -->
+    <bean id="food4" class="com.fw.week4.Food">
+        <property name="name" value="김치볶음밥"/>
+        <property name="type" value="한식"/>
+    </bean>
+
+    <!-- ═══ 2. Bean Definition Inheritance ═══ -->
+
+    <!-- Person 빈 정의 템플릿 (abstract) -->
+    <bean id="personTemplate" class="com.fw.week4.Person" abstract="true">
+        <property name="name" value="홍길동"/>
+        <property name="age" value="0"/>
+    </bean>
+
+    <!-- 템플릿을 상속받아 age만 재정의 -->
+    <bean id="sangjin4" class="com.fw.week4.Person" parent="personTemplate">
+        <property name="age" value="29"/>
+        <property name="gender" value="M"/>
+        <property name="birthDate" value="1996-05-21"/>
+        <property name="favoriteFood" ref="food4"/>
+    </bean>
+
+    <!-- ═══ 3. BeanPostProcessor ═══ -->
+    <bean class="com.fw.week4.CustomBeanPostProcessor"/>
+
+</beans>
