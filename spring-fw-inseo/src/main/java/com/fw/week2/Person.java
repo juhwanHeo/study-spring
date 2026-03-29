@@ -1,22 +1,23 @@
 package com.fw.week2;
+import com.fw.week3.Food;
+import com.fw.week3.Vegetable;
 
-public class Person{
-    /*
-    name : 이름
-    age : 나이
-    gender : 성별(F / M)
-    birthDate : 생일 ( YYYY-MM-DD)
-     */
+public class Person {
 
     private String name;
-    private  int age;
-    private  GenderType gender;
+    private int age;
+    private GenderType gender;
     private String birthDate;
+
+    // 추가
+    private Food food;
+
 
     public Person() {
         System.out.println("Person 생성!");
     }
-    // Getter / Setter
+
+    // 기존 Getter / Setter 유지
 
     public String getName() {
         return name;
@@ -50,9 +51,15 @@ public class Person{
         this.birthDate = birthDate;
     }
 
+    // ✅ Food setter 추가
+    public void setFood(Food food) {
+        this.food = food;
+    }
+
+
+
     public enum GenderType {
-        M, // male
-        F  // female
+        M, F
     }
 
     public void hello() {
@@ -60,6 +67,11 @@ public class Person{
         System.out.println("age: " + age);
         System.out.println("gender: " + gender);
         System.out.println("birth date: " + birthDate);
-    }
 
+        //  추가 출력
+        if (food != null) {
+            food.print();
+        }
+
+    }
 }
