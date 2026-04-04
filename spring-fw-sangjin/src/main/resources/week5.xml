@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 애노테이션 처리 활성화 (@Autowired, @Resource, @Value 등) -->
+    <context:annotation-config/>
+
+    <!-- gamja.properties 로딩 (@Value에서 ${gamja.count} 사용) -->
+    <context:property-placeholder location="classpath:gamja.properties"/>
+
+    <!-- MyServiceImpl 빈 정의 -->
+    <bean id="myService" class="com.fw.week5.MyServiceImpl"/>
+
+    <!-- GamjaServiceImpl 빈 정의 (@Value로 count 주입) -->
+    <bean id="gamjaService" class="com.fw.week5.GamjaServiceImpl"/>
+
+    <!-- HelloService 빈 정의 (@Autowired, @Resource로 위 빈들을 주입받음) -->
+    <bean id="helloService" class="com.fw.week5.HelloService"/>
+
+</beans>
