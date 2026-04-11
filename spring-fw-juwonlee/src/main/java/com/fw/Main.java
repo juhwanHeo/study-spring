@@ -1,7 +1,6 @@
 package com.fw;
 
-import com.fw.week2.Person;
-import com.fw.week3.Vegetable;
+import com.fw.week5.HelloService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -9,15 +8,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @Slf4j
 public class Main {
 
-  public static void main(String[] args) {
-    log.info("Hello World");
-      ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("week4.xml");
-      Person person = context.getBean("juwonlee", Person.class);
-      person.hello();
+    public static void main(String[] args) {
+        log.info("Hello World");
 
-      Vegetable vegetable = context.getBean("vegetable", Vegetable.class);
-      log.info("Vegetable info: {}", vegetable);
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("week5.xml");
+        HelloService helloService = context.getBean(HelloService.class);
 
-      context.close();
-  }
+        helloService.sayHello();
+
+        context.close();
+    }
 }
