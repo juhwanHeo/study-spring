@@ -11,13 +11,14 @@ public class Main {
 
   public static void main(String[] args) {
 
-    // xml
-    // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("week5.xml");
-    // AppConfig
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
     HelloService helloService = context.getBean(HelloService.class);
     helloService.sayHello();
+
+    for (int i = 0; i < 10; i++) {
+      context.getBean("gamjaServiceImpl");
+    }
 
     context.close();
   }
