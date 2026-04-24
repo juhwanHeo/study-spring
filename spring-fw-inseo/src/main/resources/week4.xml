@@ -23,4 +23,14 @@
         <property name="food" ref="gamja"/>
     </bean>
 
+    <!-- 2번 문제-->
+    <bean id="personTemplate" class="com.fw.week2.Person" abstract="true">
+        <property name="name" value="홍길동"/>
+        <property name="age" value="0"/>
+    </bean>
+
+    <bean id="inheritPerson" parent="personTemplate">
+        <property name="age" value="27"/>
+    </bean>
+
 </beans>

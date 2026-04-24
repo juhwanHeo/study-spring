@@ -14,10 +14,12 @@ public class Main {
         Person person = context.getBean("inseo", Person.class);
         person.hello();
 
+        System.out.println("----- Bean Definition Inheritance -----");
+
+        Person inheritPerson = context.getBean("inheritPerson", Person.class);
+        inheritPerson.hello();
 
 
-
-        // 🔥 이거 반드시 추가
         context.close();
     }
 }
