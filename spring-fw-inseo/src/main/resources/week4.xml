@@ -32,5 +32,7 @@
     <bean id="inheritPerson" parent="personTemplate">
         <property name="age" value="27"/>
     </bean>
+    <!--3번 문제-->
+    <bean id="myBeanPostProcessor" class="com.fw.week4.MyBeanPostProcessor"/>
 
 </beans>
