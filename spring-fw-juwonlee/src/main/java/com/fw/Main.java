@@ -1,6 +1,5 @@
 package com.fw;
 
-import com.fw.week5.GamjaServiceImpl;
 import com.fw.week5.HelloService;
 import com.fw.week6.AppConfig;
 import lombok.extern.slf4j.Slf4j;
