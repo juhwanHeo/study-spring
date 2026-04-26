@@ -1,7 +1,9 @@
 package com.fw.week5;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
+@Service("gamjaServiceImpl")
 public class GamjaServiceImpl implements MyService {
 
     @Value("${gamja.count}")

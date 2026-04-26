@@ -1,24 +1,17 @@
 package com.fw;
 
-import com.fw.week2.Person;
-import com.fw.week3.Vegetable;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.fw.week5.HelloService;
+import com.fw.week6.AppConfig;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("week4.xml");
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(AppConfig.class);
 
-        // 1. Person 먼저 호출
-        Person person = context.getBean("inseo", Person.class);
-        person.hello();
-
-        System.out.println("----- Bean Definition Inheritance -----");
-
-        Person inheritPerson = context.getBean("inheritPerson", Person.class);
-        inheritPerson.hello();
-
+        HelloService helloService = context.getBean(HelloService.class);
+        helloService.sayHello();
 
         context.close();
     }
