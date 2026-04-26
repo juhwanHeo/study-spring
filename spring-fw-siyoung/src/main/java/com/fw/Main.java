@@ -1,19 +1,22 @@
 package com.fw;
 
-import com.fw.week2.Person;
-import com.fw.week3.Food;
-import com.fw.week3.Vegetable;
+import com.fw.week5.MyService;
+import com.fw.week5.Week6Configuration;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @Slf4j
 public class Main {
 
   public static void main(String[] args) {
-    try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("week4.xml")) {
-      Person person = context.getBean("person", Person.class);
-      person.hello();
+    try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Week6Configuration.class)) {
+      MyService myService = context.getBean("myServiceImpl", MyService.class);
+      myService.hello();
+
+      for (int i = 0; i < 10; i++) {
+        MyService gamjaService = context.getBean("gamjaServiceImpl", MyService.class);
+//        gamjaService.hello();
+      }
     }
   }
 }
