@@ -24,6 +24,14 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-context
     implementation 'org.springframework:spring-context:6.2.11'
 
+    // Jakarta Annotations API (@PostConstruct, @PreDestroy, @Resource 등)
+    // Spring Framework 6.x는 jakarta.annotation-api를 transitive로 포함하지 않으므로 명시적 추가 필요
+    implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
+
+    // Jakarta Inject API (JSR-330: @Inject, @Named, @Qualifier, Provider 등)
+    // Week7 에서 jakarta.inject.Provider<T> 사용을 위해 추가
+    implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.42'
     annotationProcessor 'org.projectlombok:lombok:1.18.42'
