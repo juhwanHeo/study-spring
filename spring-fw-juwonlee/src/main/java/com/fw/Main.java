@@ -16,7 +16,5 @@ public class Main {
         HelloService helloService = context.getBean(HelloService.class);
 
         helloService.sayHello();
-
-        for (int i = 0; i < 10; i++) context.getBean("gamjaServiceImpl");
     }
 }
