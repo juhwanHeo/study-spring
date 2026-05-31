@@ -1,18 +1,23 @@
 package com.fw;
 
 import com.fw.week5.HelloService;
+import com.fw.week6.AppConfig;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @Slf4j
 public class Main {
 
   public static void main(String[] args) {
-    ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("week5.xml");
-    HelloService helloService = context.getBean(HelloService.class);
+    ApplicationContext context =
+        new AnnotationConfigApplicationContext(AppConfig.class);
 
+    HelloService helloService = context.getBean(HelloService.class);
     helloService.sayHello();
-    context.close();
+
+    for (int i = 0; i < 10; i++) {
+      context.getBean("gamjaServiceImpl");
+    }
   }
 }
