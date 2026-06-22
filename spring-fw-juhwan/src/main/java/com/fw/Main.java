@@ -1,6 +1,6 @@
 package com.fw;
 
-import com.fw.week7.AppConfig;
+import com.fw.week8.AppConfig;
 import com.fw.week7.Transfer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
