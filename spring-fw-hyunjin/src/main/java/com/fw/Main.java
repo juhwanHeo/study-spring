@@ -14,10 +14,5 @@ public class Main {
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
         HelloService helloService = context.getBean(HelloService.class);
-        helloService.sayHello();
 
-        for (int i = 0; i < 10; i++){
-            context.getBean("gamjaServiceImpl");
-        }
-    }
-}
+        helloService.sayHello();
