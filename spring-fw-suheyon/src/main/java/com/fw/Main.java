@@ -11,9 +11,17 @@ public class Main {
 
   public static void main(String[] args) {
 
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(com.fw.week7.AppConfig.class);
-    Transfer transfer = context.getBean(Transfer.class);
-    transfer.transfer();
-    context.close();
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+    ctx.getEnvironment().setActiveProfiles("prod"); // prod로 바꾸면 prod 실행
+    ctx.register(AppConfig.class);
+    ctx.refresh();
+
+    String potatoCount = ctx.getEnvironment().getProperty("potato.count");
+    String message = ctx.getEnvironment().getProperty("env.message");
+
+    System.out.println(message);
+    System.out.println("감자 개수: " + potatoCount);
+
+    ctx.close();
   }
 }
