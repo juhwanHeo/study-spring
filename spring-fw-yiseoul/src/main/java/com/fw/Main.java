@@ -1,22 +1,24 @@
 package com.fw;
 
-import com.fw.week5.HelloService;
-import com.fw.week7.AppConfig;
+import com.fw.week8.AppConfig;
 import com.fw.week7.Transfer;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @Slf4j
 public class Main {
 
   public static void main(String[] args) {
-    ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 
-    HelloService helloService = (HelloService) context.getBean("helloService");
-    helloService.sayHello();
+    String profile = "prod";
+    context.getEnvironment().setActiveProfiles(profile);
+    context.register(AppConfig.class);
+    context.refresh();
 
     Transfer transfer = context.getBean(Transfer.class);
     transfer.transfer();
+
+    context.close();
   }
 }
