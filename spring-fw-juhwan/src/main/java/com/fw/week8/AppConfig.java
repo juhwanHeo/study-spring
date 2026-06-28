@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @Import({TransferRegistrar.class})
-@PropertySource("classpath:gamja.properties")
+@PropertySource("classpath:application-${spring.profiles.active:dev}.properties")
 public class AppConfig {
 
   @Value("${gamja.count}")
