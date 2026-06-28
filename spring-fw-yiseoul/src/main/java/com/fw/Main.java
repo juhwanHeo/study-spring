@@ -1,7 +1,6 @@
 package com.fw;
 
-import com.fw.week5.HelloService;
-import com.fw.week7.AppConfig;
+import com.fw.week8.AppConfig;
 import com.fw.week7.Transfer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
@@ -12,9 +11,6 @@ public class Main {
 
   public static void main(String[] args) {
     ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-
-    HelloService helloService = (HelloService) context.getBean("helloService");
-    helloService.sayHello();
 
     Transfer transfer = context.getBean(Transfer.class);
     transfer.transfer();
