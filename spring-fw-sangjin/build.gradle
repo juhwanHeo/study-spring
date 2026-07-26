@@ -22,7 +22,8 @@ repositories {
 
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-context
-    implementation 'org.springframework:spring-context:6.2.11'
+    // Week8: BeanRegistrar 인터페이스(org.springframework.beans.factory.BeanRegistrar) 사용을 위해 Spring Framework 7 이상으로 업그레이드
+    implementation 'org.springframework:spring-context:7.0.8'
 
     // Jakarta Annotations API (@PostConstruct, @PreDestroy, @Resource 등)
     // Spring Framework 6.x는 jakarta.annotation-api를 transitive로 포함하지 않으므로 명시적 추가 필요
