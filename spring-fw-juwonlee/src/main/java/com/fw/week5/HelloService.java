@@ -19,7 +19,9 @@ public class HelloService {
 
     public void sayHello() {
         myService.hello();
-        MyService gamjaService = myServiceObjectProvider.getIfAvailable();
-        if (gamjaService != null) gamjaService.hello();
+        if (myServiceObjectProvider.getIfAvailable() != null) {
+            MyService gamjaService = myServiceObjectProvider.getObject();
+            gamjaService.hello();
+        }
     }
 }
