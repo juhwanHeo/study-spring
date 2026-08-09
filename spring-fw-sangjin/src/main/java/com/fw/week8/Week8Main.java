@@ -11,7 +11,7 @@ public class Week8Main {
         System.out.println("  Week8: BeanRegistrar & dev/prod Profile");
         System.out.println("==================================================\n");
 
-        String[] profilesToRun = {"prod"}; //"prod"
+        String[] profilesToRun = {"dev"}; //"dev","prod"
 
         for (String profile : profilesToRun) {
             runWithProfile(profile);
