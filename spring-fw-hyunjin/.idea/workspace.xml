@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d28da94b-336b-4c8c-a69c-10e934bc6cf9" name="Changes" comment="Add 감자 재배지" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring-fw-hyunjin" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="week8/hyunjin" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hapyjin&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/juhwanHeo/study-spring.git/&quot;,
+    &quot;accountId&quot;: &quot;6013c377-e0e2-4b83-9ee5-f7322c9bcb14&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="35VAzFV500two0lXT1dArF8WgmT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.spring-fw-hyunjin [:com.fw.Main.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "week5/hyunjin",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/healthhub/hjkim/study-spring/spring-fw-hyunjin/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Gradle Declarative Configuration",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.fw.week2" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fw.Main" />
+      <module name="spring-fw-hyunjin.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d28da94b-336b-4c8c-a69c-10e934bc6cf9" name="Changes" comment="" />
+      <created>1763185126297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763185126297</updated>
+      <workItem from="1763185128441" duration="1852000" />
+      <workItem from="1763188882295" duration="13633000" />
+      <workItem from="1768372916889" duration="58793000" />
+      <workItem from="1769225574828" duration="8060000" />
+      <workItem from="1769331206302" duration="549000" />
+      <workItem from="1769331849064" duration="8337000" />
+      <workItem from="1771250761607" duration="45448000" />
+      <workItem from="1772095780494" duration="23556000" />
+      <workItem from="1775978653582" duration="2437000" />
+      <workItem from="1781744158657" duration="890000" />
+      <workItem from="1782092744870" duration="28365000" />
+      <workItem from="1782180134180" duration="24472000" />
+      <workItem from="1782306837810" duration="15083000" />
+      <workItem from="1785717563339" duration="308000" />
+      <workItem from="1786262737063" duration="2537000" />
+    </task>
+    <task id="LOCAL-00001" summary="Week3/hyunjin">
+      <option name="closed" value="true" />
+      <created>1769236787820</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1769236787820</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Week3/hyunjin">
+      <option name="closed" value="true" />
+      <created>1769236869714</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1769236869714</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat(week3#2): 2번 문제 depends-on 누락 해결">
+      <option name="closed" value="true" />
+      <created>1772096099137</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772096099137</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(task1): jakarta.annotation 추가">
+      <option name="closed" value="true" />
+      <created>1772096237676</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772096237676</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat(task1): @PostConstruct, @PreDestroy Food 클래스, Person 클래스 적용">
+      <option name="closed" value="true" />
+      <created>1772096409972</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772096409972</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat(task2): hyunjin bean 상속 처리">
+      <option name="closed" value="true" />
+      <created>1772096847779</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772096847779</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat(task3) : MyBeanPostProcessor 구현체 추가">
+      <option name="closed" value="true" />
+      <created>1772096991356</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772096991356</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat(task1) : Main 수정">
+      <option name="closed" value="true" />
+      <created>1772097449361</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1772097449361</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add 감자 재배지">
+      <option name="closed" value="true" />
+      <created>1786263462424</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1786263462424</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add 감자 재배지">
+      <option name="closed" value="true" />
+      <created>1786263475021</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1786263475021</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="week2/hyunjin" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Week3/hyunjin" />
+    <MESSAGE value="feat(week3#2): 2번 문제 depends-on 누락 해결" />
+    <MESSAGE value="feat(task1): jakarta.annotation 추가" />
+    <MESSAGE value="feat(task1): jakarta.annotation 추" />
+    <MESSAGE value="feat(task1): @PostConstruct, @PreDestroy Food 클래스, Person 클래스 적용" />
+    <MESSAGE value="feat(task2): hyunjin bean 상속 처리" />
+    <MESSAGE value="feat(task3) : MyBeanPostProcessor 구현체 추가" />
+    <MESSAGE value="feat : 5주차 과제 제출" />
+    <MESSAGE value="feat(task1) : Main 수정" />
+    <MESSAGE value="Add 감자 재배지" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 감자 재배지" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
