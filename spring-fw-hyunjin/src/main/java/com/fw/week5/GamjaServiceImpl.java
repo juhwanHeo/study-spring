@@ -12,6 +12,6 @@ public class GamjaServiceImpl implements MyService {
     @Override
     public void hello() {
         log.info(">>> GamjaServiceImpl hello");
-        log.info(">>> GamjaServiceImpl gamja count: {}", count);
+        log.info(">>> GamjaServiceImpl 강원도 춘천에서 재배한 감자 gamja count: {}", count);
     }
 }
