@@ -11,15 +11,15 @@ public class Main {
   public static void main(String[] args) {
     String activeProfile = "prod";
     System.setProperty("spring.profiles.active", activeProfile);
-    
+
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
     context.getEnvironment().setActiveProfiles(activeProfile);
 
     context.register(AppConfig.class);
     context.refresh();
-    
+
     Environment env = context.getEnvironment();
-    
+
     System.out.println("===========================================");
 
     if ("dev".equals(activeProfile)) {
@@ -32,7 +32,7 @@ public class Main {
       System.out.println("감자 개수 (prod.gamja.count): " + gamjaCount);
     }
     System.out.println("===========================================");
-    
+
     context.close();
   }
 }
