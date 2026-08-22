@@ -1,27 +1,18 @@
 package com.fw;
 
-import com.fw.week7.Transfer;
-import com.fw.week8.AppConfig;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationContext;
+import com.fw.week9.AppConfig;
+import com.fw.week9.OrderEvent;
+import com.fw.week9.OrderPublisher;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.core.env.Environment;
 
-@Slf4j
 public class Main {
 
     public static void main(String[] args) {
-        System.setProperty("spring.profiles.active", "prod");
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext(AppConfig.class);
+        try (AnnotationConfigApplicationContext context =
+                     new AnnotationConfigApplicationContext(AppConfig.class)) {
 
-//        Transfer transfer = context.getBean(Transfer.class);
-//        transfer.transfer();
-
-        Environment env = context.getEnvironment();
-        log.info("{} 환경입니다.", env.getActiveProfiles()[0]);
-        log.info("감자 개수: {}", env.getProperty("gamja.count"));
-
-
+            OrderPublisher publisher = context.getBean(OrderPublisher.class);
+            publisher.publish(new OrderEvent(3333L, "고구마", 100));
+        }
     }
 }

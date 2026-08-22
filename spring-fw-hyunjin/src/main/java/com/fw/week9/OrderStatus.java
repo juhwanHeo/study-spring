@@ -1,4 +1,5 @@
 package com.fw.week9;
 
-public class OrderStatus {
+public enum OrderStatus {
+    WAIT, COMPLETED
 }
