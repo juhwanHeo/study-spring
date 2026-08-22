@@ -1,11 +1,22 @@
 package com.fw.week8;
 
+import com.fw.week7.Gamja;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-// @Import를 통해 TransferRegistrar를 설정 클래스에 결합시킵니다.
-// 스프링이 구동될 때 이 Registrar 내부의 register() 메서드를 찾아 실행하게 됩니다.
+@PropertySource("classpath:application-${spring.profiles.active:dev}.properties")
 @Import(TransferRegistrar.class)
 public class AppConfig {
+
+    @Value("${gamja.count}")
+    private int count;
+
+    @Bean
+    public Gamja gamja() {
+        return new Gamja(count);
+    }
 }
