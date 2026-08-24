@@ -1,25 +1,38 @@
 package com.fw;
 
-import com.fw.week5.MyService;
-import com.fw.week5.Week6Configuration;
-import com.fw.week7.AppConfig;
-import com.fw.week7.Transfer;
+import com.fw.week8.AppConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.Environment;
 
 @Slf4j
 public class Main {
 
   public static void main(String[] args) {
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Week6Configuration.class, AppConfig.class);
-    MyService myService = context.getBean("myServiceImpl", MyService.class);
-    myService.hello();
+    String activeProfile = "prod";
+    System.setProperty("spring.profiles.active", activeProfile);
 
-    for (int i = 0; i < 5; i++) {
-      myService.hello();
+    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+    context.getEnvironment().setActiveProfiles(activeProfile);
+
+    context.register(AppConfig.class);
+    context.refresh();
+
+    Environment env = context.getEnvironment();
+
+    System.out.println("===========================================");
+
+    if ("dev".equals(activeProfile)) {
+      System.out.println("개발환경입니다.");
+      String gamjaCount = env.getProperty("dev.gamja.count", "0");
+      System.out.println("감자 개수 (dev.gamja.count): " + gamjaCount);
+    } else if ("prod".equals(activeProfile)) {
+      System.out.println("운영환경입니다.");
+      String gamjaCount = env.getProperty("prod.gamja.count", "0");
+      System.out.println("감자 개수 (prod.gamja.count): " + gamjaCount);
     }
+    System.out.println("===========================================");
 
-    Transfer transfer = context.getBean("Transfer", Transfer.class);
-    transfer.transfer();
+    context.close();
   }
 }
