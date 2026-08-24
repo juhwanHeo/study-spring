@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-context
-    implementation 'org.springframework:spring-context:6.2.11'
+    implementation 'org.springframework:spring-context:7.0.0'
     implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
 
     // Lombok
