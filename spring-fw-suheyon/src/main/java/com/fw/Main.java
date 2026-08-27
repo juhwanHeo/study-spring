@@ -1,8 +1,9 @@
 package com.fw;
 
 import com.fw.week5.HelloService;
-import com.fw.week6.AppConfig;
+// import com.fw.week6.AppConfig;
 import com.fw.week7.Transfer;
+import com.fw.week8.AppConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
