@@ -11,10 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
   public static void main(String[] args) {
     ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-    OrderEvent event = new OrderEvent();
-    event.orderId = 2026L;
-    event.name = "우시영";
-    event.count = 824;
+    OrderEvent event = new OrderEvent(2026L, "우시영", 824, null);
 
     OrderPublisher orderPublisher = context.getBean(OrderPublisher.class);
     orderPublisher.publish(event);

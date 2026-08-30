@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class OrderConsumer {
   @EventListener
   public void consume(OrderEvent event) {
-    event.status = OrderStatus.COMPLETED;
+    event.setStatus(OrderStatus.COMPLETED);
     log.info("OrderEvent consumed: {}", event);
   }
 }

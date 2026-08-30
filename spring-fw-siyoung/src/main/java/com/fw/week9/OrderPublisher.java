@@ -1,18 +1,22 @@
 package com.fw.week9;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-@RequiredArgsConstructor
-public class OrderPublisher {
-  private final ApplicationEventPublisher applicationEventPublisher;
+public class OrderPublisher implements ApplicationEventPublisherAware {
+  private ApplicationEventPublisher applicationEventPublisher;
+
+  @Override
+  public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+    this.applicationEventPublisher = applicationEventPublisher;
+  }
 
   public void publish(OrderEvent event) {
-    event.status = OrderStatus.WAIT;
+    event.setStatus(OrderStatus.WAIT);
     log.info("OrderEvent published: {}", event);
     applicationEventPublisher.publishEvent(event);
   }
