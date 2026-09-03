@@ -19,7 +19,10 @@ public class HelloService {
 
   public void sayHello() {
     myServiceImpl.hello();
-    MyService gamjaServiceImpl = this.gamjaServiceImpl.getObject();
-    gamjaServiceImpl.hello();
+
+    if (this.gamjaServiceImpl.getIfAvailable() != null) {
+      MyService gamjaServiceImpl = this.gamjaServiceImpl.getObject();
+      gamjaServiceImpl.hello();
+    }
   }
 }
