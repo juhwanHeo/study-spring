@@ -1,7 +1,8 @@
 package com.fw;
 
-import com.fw.week8.AppConfig;
-import com.fw.week7.Transfer;
+import com.fw.week9.AppConfig;
+import com.fw.week9.OrderEvent;
+import com.fw.week9.OrderPublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -9,16 +10,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 
   public static void main(String[] args) {
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 
-    String profile = "prod";
-    context.getEnvironment().setActiveProfiles(profile);
-    context.register(AppConfig.class);
-    context.refresh();
+    try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
 
-    Transfer transfer = context.getBean(Transfer.class);
-    transfer.transfer();
+      OrderPublisher orderPublisher = context.getBean(OrderPublisher.class);
+      OrderEvent event = new OrderEvent(1000000L, "감자", 2);
 
-    context.close();
+      orderPublisher.publish(event);
+    }
   }
 }
