@@ -1,21 +1,22 @@
 package com.fw;
 
-import com.fw.week5.HelloService;
+import com.fw.week9.AppConfig;
+import com.fw.week9.OrderEvent;
+import com.fw.week9.OrderPublisher;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @Slf4j
 public class Main {
 
   public static void main(String[] args) {
-    ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-    HelloService helloService = (HelloService) context.getBean("helloService");
-    helloService.sayHello();
+    try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
 
-    for (int i = 0; i < 10; i++) {
-      context.getBean("gamjaService");
+      OrderPublisher orderPublisher = context.getBean(OrderPublisher.class);
+      OrderEvent event = new OrderEvent(1000000L, "감자", 2);
+
+      orderPublisher.publish(event);
     }
   }
 }

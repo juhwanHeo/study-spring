@@ -1,12 +1,9 @@
-package com.fw;
+package com.fw.week9;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan(basePackages = "com.fw")
-@PropertySource("classpath:gamja.properties")
+@ComponentScan(basePackages = "com.fw.week9")
 public class AppConfig {
-
 }
