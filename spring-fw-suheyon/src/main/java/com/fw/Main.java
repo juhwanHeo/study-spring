@@ -1,27 +1,25 @@
 package com.fw;
 
-import com.fw.week5.HelloService;
-// import com.fw.week6.AppConfig;
-import com.fw.week7.Transfer;
-import com.fw.week8.AppConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.fw.week10.ResourceService;
 
 @Slf4j
 public class Main {
 
   public static void main(String[] args) {
 
-    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-    ctx.getEnvironment().setActiveProfiles("prod"); // prod로 바꾸면 prod 실행
-    ctx.register(AppConfig.class);
-    ctx.refresh();
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(
+        ResourceService.class);
+    ResourceService service = ctx.getBean(ResourceService.class);
 
-    String potatoCount = ctx.getEnvironment().getProperty("potato.count");
-    String message = ctx.getEnvironment().getProperty("env.message");
+    // classpath
+    service.printResource(ctx.getResource("classpath:sample.txt"));
 
-    System.out.println(message);
-    System.out.println("감자 개수: " + potatoCount);
+    // filepath
+    service.printResource(ctx.getResource(
+        "file:/C:/Users/Seeds/IdeaProjects/study-spring-week2/spring-fw-suheyon/src/main/java/com/fw/week10/sample.txt"
+    ));
 
     ctx.close();
   }
