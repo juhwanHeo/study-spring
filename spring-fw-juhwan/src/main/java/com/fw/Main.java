@@ -1,23 +1,21 @@
 package com.fw;
 
-import com.fw.week5.HelloService;
-import com.fw.week6.AppConfig;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationContext;
+import com.fw.week10.ResourceService;
+import java.nio.file.Path;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@Slf4j
 public class Main {
 
   public static void main(String[] args) {
-    ApplicationContext context =
-        new AnnotationConfigApplicationContext(AppConfig.class);
+    try (AnnotationConfigApplicationContext context =
+        new AnnotationConfigApplicationContext(ResourceService.class)) {
+      ResourceService service = context.getBean(ResourceService.class);
+      service.printResource(context.getResource("classpath:sample.txt"));
 
-    HelloService helloService = context.getBean(HelloService.class);
-    helloService.sayHello();
-
-    for (int i = 0; i < 10; i++) {
-      context.getBean("gamjaServiceImpl");
+      // 실행 작업 디렉터리: spring-fw-juhwan
+      String fileLocation = Path.of("spring-fw-juhwan/src/main/java/com/fw/week10/sample.txt")
+          .toAbsolutePath().toUri().toString();
+      service.printResource(context.getResource(fileLocation));
     }
   }
 }

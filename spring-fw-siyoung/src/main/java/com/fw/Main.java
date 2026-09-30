@@ -1,38 +1,23 @@
 package com.fw;
 
-import com.fw.week8.AppConfig;
+import com.fw.week10.ResourceService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.core.env.Environment;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 
 @Slf4j
 public class Main {
-
   public static void main(String[] args) {
-    String activeProfile = "prod";
-    System.setProperty("spring.profiles.active", activeProfile);
+    ResourceService resourceService = new ResourceService();
+    ResourceLoader resourceLoader = new DefaultResourceLoader();
 
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-    context.getEnvironment().setActiveProfiles(activeProfile);
+    Resource classpathResource = resourceLoader.getResource("classpath:sample.txt");
+    Resource filepathResource = resourceLoader.getResource("file:C:\\Users\\Seeds\\IdeaProjects\\study-spring\\spring-fw-siyoung\\src\\main\\java\\com\\fw\\week10\\sample.txt");
+    Resource unknownResource = resourceLoader.getResource("우시영");
 
-    context.register(AppConfig.class);
-    context.refresh();
-
-    Environment env = context.getEnvironment();
-
-    System.out.println("===========================================");
-
-    if ("dev".equals(activeProfile)) {
-      System.out.println("개발환경입니다.");
-      String gamjaCount = env.getProperty("dev.gamja.count", "0");
-      System.out.println("감자 개수 (dev.gamja.count): " + gamjaCount);
-    } else if ("prod".equals(activeProfile)) {
-      System.out.println("운영환경입니다.");
-      String gamjaCount = env.getProperty("prod.gamja.count", "0");
-      System.out.println("감자 개수 (prod.gamja.count): " + gamjaCount);
-    }
-    System.out.println("===========================================");
-
-    context.close();
+    resourceService.printResource(classpathResource);
+    resourceService.printResource(filepathResource);
+    resourceService.printResource(unknownResource);
   }
 }

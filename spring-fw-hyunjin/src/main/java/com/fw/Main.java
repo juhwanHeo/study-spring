@@ -1,22 +1,20 @@
 package com.fw;
 
-import com.fw.week2.Person;
-import com.fw.week3.Vegetable;
+import com.fw.week7.Transfer;
+import com.fw.week7.AppConfig;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @Slf4j
 public class Main {
 
-  public static void main(String[] args) {
-      ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("week4.xml");
-      Person person = context.getBean("hyunjin",Person.class);
-      Vegetable vegetable = context.getBean("vegetable",Vegetable.class);
+    public static void main(String[] args) {
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext(AppConfig.class);
 
-      person.hello();
-      vegetable.print();
+        Transfer transfer = context.getBean(Transfer.class);
+        transfer.transfer();
 
-      context.close();
-  }
+    }
 }

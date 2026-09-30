@@ -1,9 +1,10 @@
 package com.fw;
 
-import com.fw.week8.AppConfig;
+import com.fw.week9.AppConfig;
+import com.fw.week9.OrderEvent;
+import com.fw.week9.OrderPublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.core.env.Environment;
 
 @Slf4j
 public class Main {
@@ -11,12 +12,9 @@ public class Main {
     public static void main(String[] args) {
         log.info("Hello World");
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-
-        Environment env = context.getEnvironment();
-        log.info("Current Profile: {}", env.getActiveProfiles()[0]);
-        log.info("gamja count: {}", env.getProperty("gamja.count", "0"));
-
-        context.close();
+        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
+            OrderPublisher orderPublisher = context.getBean(OrderPublisher.class);
+            orderPublisher.publish(new OrderEvent(1000L, "고구마", 10));
+        }
     }
 }
