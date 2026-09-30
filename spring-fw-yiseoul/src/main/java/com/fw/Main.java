@@ -1,8 +1,6 @@
 package com.fw;
 
-import com.fw.week9.AppConfig;
-import com.fw.week9.OrderEvent;
-import com.fw.week9.OrderPublisher;
+import com.fw.week10.ResourceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -11,12 +9,14 @@ public class Main {
 
   public static void main(String[] args) {
 
-    try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
+    try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+        ResourceService.class)) {
 
-      OrderPublisher orderPublisher = context.getBean(OrderPublisher.class);
-      OrderEvent event = new OrderEvent(1000000L, "감자", 2);
+      ResourceService service = context.getBean(ResourceService.class);
 
-      orderPublisher.publish(event);
+      service.printResource(service.getResource("file:///C:/None/none.txt"));
+      service.printResource(service.getResource("classpath:sample.txt"));
+      service.printResource(service.getResource("file:///C:/Workspaces/study-spring/spring-fw-yiseoul/src/main/java/com/fw/week10/sample.txt"));
     }
   }
 }
