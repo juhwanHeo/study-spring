@@ -1,9 +1,9 @@
 package com.fw;
 
-import com.fw.week5.HelloService;
-// import com.fw.week6.AppConfig;
-import com.fw.week7.Transfer;
-import com.fw.week8.AppConfig;
+import com.fw.week9.AppConfig;
+import com.fw.week9.OrderEvent;
+import com.fw.week9.OrderPublisher;
+import com.fw.week9.OrderStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -11,18 +11,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 
   public static void main(String[] args) {
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+    OrderPublisher publisher = ctx.getBean(OrderPublisher.class);
+    OrderEvent orderEvent = new OrderEvent(publisher, 1L, "cake", 10, OrderStatus.WAIT);
 
-    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-    ctx.getEnvironment().setActiveProfiles("prod"); // prod로 바꾸면 prod 실행
-    ctx.register(AppConfig.class);
-    ctx.refresh();
-
-    String potatoCount = ctx.getEnvironment().getProperty("potato.count");
-    String message = ctx.getEnvironment().getProperty("env.message");
-
-    System.out.println(message);
-    System.out.println("감자 개수: " + potatoCount);
-
+    publisher.publish(orderEvent);
     ctx.close();
   }
 }
