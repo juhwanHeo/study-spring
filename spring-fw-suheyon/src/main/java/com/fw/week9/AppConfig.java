@@ -1,10 +1,10 @@
 package com.fw.week9;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ComponentScan;
 
 @Configuration
-@Import({OrderPublisher.class, OrderConsumer.class})
+@ComponentScan(basePackages = "com.fw.week9")
 public class AppConfig {
 
 }

@@ -3,12 +3,15 @@ package com.fw.week9;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.stereotype.Component;
 
 @Slf4j
+@Component
 public class OrderPublisher implements ApplicationEventPublisherAware {
 
   private ApplicationEventPublisher publisher;
 
+  @Override
   // Spring이 자동으로 호출해서 publisher를 주입해줌
   public void setApplicationEventPublisher(ApplicationEventPublisher publisher) {
     this.publisher = publisher;

@@ -2,8 +2,10 @@ package com.fw.week9;
 
 import org.springframework.context.ApplicationListener;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 @Slf4j
+@Component
 public class OrderConsumer implements ApplicationListener<OrderEvent> {
 
   @Override
