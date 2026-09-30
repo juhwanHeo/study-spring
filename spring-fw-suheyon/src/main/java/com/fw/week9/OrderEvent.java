@@ -1,11 +1,9 @@
 package com.fw.week9;
 
 import org.springframework.context.ApplicationEvent;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class OrderEvent extends ApplicationEvent {
 
   private Long orderId;
