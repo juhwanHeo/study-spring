@@ -1,28 +1,35 @@
 package com.fw;
 
-import com.fw.week5.HelloService;
-import com.fw.week5.MyService;
-import com.fw.week6.AppConfig;
+import com.fw.week7.Transfer;
+import com.fw.week8.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
+
     public static void main(String[] args) {
+        run("dev");
+        run("prod");
+    }
 
-        AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(AppConfig.class);
+    private static void run(String profile) {
+        System.setProperty("spring.profiles.active", profile);
 
-        HelloService helloService = context.getBean(HelloService.class);
-        helloService.sayHello();
+        try (AnnotationConfigApplicationContext context =
+                     new AnnotationConfigApplicationContext(AppConfig.class)) {
 
-        System.out.println("----- GamjaServiceImpl prototype scope 확인 -----");
+            String activeProfile = context.getEnvironment()
+                    .getProperty("spring.profiles.active", "dev");
 
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i + "번째 GamjaServiceImpl 호출");
-            MyService gamjaService =
-                    context.getBean("gamjaServiceImpl", MyService.class);
-            gamjaService.hello();
+            if ("dev".equals(activeProfile)) {
+                System.out.println("dev: 개발환경입니다.");
+            } else if ("prod".equals(activeProfile)) {
+                System.out.println("prod: production running.");
+            }
+
+            Transfer transfer = context.getBean("transfer", Transfer.class);
+            transfer.transfer();
         }
 
-        context.close();
+        System.out.println();
     }
 }
